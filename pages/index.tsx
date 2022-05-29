@@ -84,7 +84,7 @@ const Home: NextPage = () => {
         <span>vata yoga</span>
       </h1>
 
-      <div className={styles.imageContainer}>
+      <div className={styles.handstand}>
         <Image alt="handstands" src={handstands} width={600} height={600} />
       </div>
 
@@ -166,7 +166,7 @@ const Home: NextPage = () => {
         })}
       </div>
 
-      <div className={styles.imageContainer}>
+      <div className={styles.team}>
         <Image alt="team" src={team} />
       </div>
     </Page>

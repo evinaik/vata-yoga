@@ -117,11 +117,16 @@
   font-size: small;
 }
 
-.imageContainer {
+.handstand,
+.team {
   max-width: 1200px;
   margin: 16px 0;
 }
 
-.imageContainer img {
+.handstand img {
+  border-radius: 400px;
+}
+
+.team img {
   border-radius: 8px;
 }
