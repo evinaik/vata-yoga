@@ -71,15 +71,16 @@ const Home: NextPage = () => {
             <tbody>
               {calendar.map(({ days, name, time, teacher }) => {
                 return (
-                  <tr>
+                  <tr key={time}>
                     <td>{time}</td>
                     {[0, 1, 2, 3, 4, 5, 6].map((day) => {
+                      const key = `${time}/${day}`;
                       if (!days.includes(day)) {
-                        return <td />;
+                        return <td key={key} />;
                       }
 
                       return (
-                        <td>
+                        <td key={key}>
                           <div>{name}</div>
                           <div className={styles.teacher}>{teacher}</div>
                         </td>
