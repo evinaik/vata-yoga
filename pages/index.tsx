@@ -1,3 +1,4 @@
+import dayjs from "dayjs";
 import type { NextPage } from "next";
 import Image from "next/image";
 import handstands from "../public/handstands.png";
@@ -77,6 +78,17 @@ const calendar = [
   },
 ];
 
+const thisWeek = dayjs().startOf("w");
+const days = [
+  thisWeek.format("dddd, MMM D"),
+  thisWeek.add(1, "d").format("dddd, MMM D"),
+  thisWeek.add(2, "d").format("dddd, MMM D"),
+  thisWeek.add(3, "d").format("dddd, MMM D"),
+  thisWeek.add(4, "d").format("dddd, MMM D"),
+  thisWeek.add(5, "d").format("dddd, MMM D"),
+  thisWeek.add(6, "d").format("dddd, MMM D"),
+];
+
 const Home: NextPage = () => {
   return (
     <Page>
@@ -92,13 +104,13 @@ const Home: NextPage = () => {
         <thead>
           <tr>
             <td></td>
-            <td>Sunday</td>
-            <td>Monday</td>
-            <td>Tuesday</td>
-            <td>Wednesday</td>
-            <td>Thursday</td>
-            <td>Friday</td>
-            <td>Saturday</td>
+            <td>{days[0]}</td>
+            <td>{days[1]}</td>
+            <td>{days[2]}</td>
+            <td>{days[3]}</td>
+            <td>{days[4]}</td>
+            <td>{days[5]}</td>
+            <td>{days[6]}</td>
           </tr>
         </thead>
         <tbody>
@@ -134,19 +146,7 @@ const Home: NextPage = () => {
         {[0, 1, 2, 3, 4, 5, 6].map((day) => {
           return (
             <div key={day}>
-              <h3>
-                {
-                  [
-                    "Sunday",
-                    "Monday",
-                    "Tuesday",
-                    "Wednesday",
-                    "Thursday",
-                    "Friday",
-                    "Saturday",
-                  ][day]
-                }
-              </h3>
+              <h3>{days[day]}</h3>
               <ul className={styles.ul}>
                 {calendar.map(({ days, name, time, teacher }) => {
                   const key = `${time}/${day}`;
