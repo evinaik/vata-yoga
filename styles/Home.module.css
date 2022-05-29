@@ -29,10 +29,18 @@
 } */
 
 .title {
+  font-family: "Hi Melody";
   font-weight: 400;
   margin: 0;
   line-height: 1.15;
   font-size: 4rem;
+}
+
+.subtitle {
+  font-family: "Hi Melody";
+  line-height: 1.15;
+  font-size: 2rem;
+  font-weight: 100;
 }
 
 .title,

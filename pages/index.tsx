@@ -87,7 +87,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
         <style>
           @import
-          url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
+          url(&apos;https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap&apos;);
         </style>
       </Head>
 
@@ -96,14 +96,23 @@ const Home: NextPage = () => {
           <span>vata yoga</span>
         </h1>
 
-        <h3>
-          <a href="https://goo.gl/maps/UFJw4BCz6GC7Wu4FA" target="_blank">
-            vinyasa studio | 📍 nyc | virtual
+        <h3 className={styles.subtitle}>
+          <a
+            href="https://goo.gl/maps/UFJw4BCz6GC7Wu4FA"
+            rel="noreferrer"
+            target="_blank"
+          >
+            vinyasa studio | nyc + virtual
           </a>
         </h3>
 
         <div className={styles.imageContainer}>
-          <Image src="/handstands.png" height={600} width={600} />
+          <Image
+            alt="handstands"
+            src="/handstands.png"
+            height={600}
+            width={600}
+          />
         </div>
 
         <table className={styles.table}>
@@ -185,17 +194,14 @@ const Home: NextPage = () => {
         </div>
 
         <div className={styles.imageContainer}>
-          <Image src="/team.png" height={900} width={1200} />
+          <Image alt="team" src="/team.png" height={900} width={1200} />
         </div>
       </main>
 
       <footer className={styles.footer}>
         <span>
-          <a href="https://goo.gl/maps/UFJw4BCz6GC7Wu4FA" target="_blank">
-            584 Broadway, New York City
-          </a>{" "}
-          |{" "}
-          <a href="mailto:e@sk.io" target="_blank">
+          private lessons available |{" "}
+          <a href="mailto:e@sk.io" rel="noreferrer" target="_blank">
             e@sk.io
           </a>
         </span>
