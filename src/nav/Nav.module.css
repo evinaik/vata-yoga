@@ -17,8 +17,9 @@
   transition: color 0.25s ease;
 }
 
+.nav a.active,
 .nav a:hover {
-  color: var(--color-accent);
+  color: var(--color-link);
 }
 
 /* nav:not([data-scroll="0"]) .nav {

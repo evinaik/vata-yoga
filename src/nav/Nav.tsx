@@ -1,23 +1,31 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import styles from "./Nav.module.css";
 
 export function Nav() {
+  const { pathname } = useRouter();
+  console.log(pathname);
+
   return (
     <nav>
       <ul className={styles.nav}>
         <li>
-          <Link href="/">
-            <a>home</a>
+          <Link passHref href="/">
+            <a className={pathname === "/" ? styles.active : undefined}>home</a>
           </Link>
         </li>
         <li>
-          <Link href="/yogis">
-            <a>meet the team</a>
+          <Link passHref href="/yogis">
+            <a className={pathname === "/yogis" ? styles.active : undefined}>
+              meet the team
+            </a>
           </Link>
         </li>
         <li>
-          <Link href="/privates">
-            <a>privates</a>
+          <Link passHref href="/privates">
+            <a className={pathname === "/privates" ? styles.active : undefined}>
+              privates
+            </a>
           </Link>
         </li>
         <li>

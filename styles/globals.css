@@ -6,7 +6,8 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   --color-accent: hsla(245, 100%, 95%, 1);
   --color-opacity-accent: hsla(245, 100%, 95%, 0.8);
-  --color-link: #e8a;
+  /* --color-link: #987284; */
+  --color-link: #6461a0;
   --yoga-font: "Yoga Sans", "Hi Melody";
 }
 
