@@ -6,12 +6,15 @@
   max-width: 1200px;
   margin: 0 auto;
   list-style: none;
-
   padding: 24px 0;
 }
 
 .nav li {
   margin: 0 12px;
+}
+
+.nav a {
+  transition: color 0.25s ease;
 }
 
 .nav a:hover {
