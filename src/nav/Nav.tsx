@@ -20,6 +20,15 @@ export function Nav() {
             <a>privates</a>
           </Link>
         </li>
+        <li>
+          <a
+            href="https://goo.gl/maps/UFJw4BCz6GC7Wu4FA"
+            target="_blank"
+            rel="noreferrer"
+          >
+            map
+          </a>
+        </li>
       </ul>
     </nav>
   );
