@@ -2,6 +2,24 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import dayjs from "dayjs";
+
+const times = [
+  "6:00 AM",
+  "7:00 AM",
+  "8:00 AM",
+  "9:00 AM",
+  "10:00 AM",
+  "11:00 AM",
+  "12:00 PM",
+  "1:00 PM",
+  "2:00 PM",
+  "3:00 PM",
+  "4:00 PM",
+  "5:00 PM",
+  "6:00 PM",
+  "7:00 PM",
+];
 
 const calendar = [
   {
@@ -11,10 +29,22 @@ const calendar = [
     days: [1, 2, 3, 4, 5],
   },
   {
+    time: "6:00 AM",
+    name: "Meditation",
+    teacher: "Isa",
+    days: [0, 6],
+  },
+  {
     time: "7:00 AM",
-    name: "Power Vinyasa Flow",
+    name: "Power Flow",
     teacher: "Anokhi",
     days: [1, 3, 5],
+  },
+  {
+    time: "9:00 AM",
+    name: "Restorative",
+    teacher: "Joe",
+    days: [0, 3, 6],
   },
   {
     time: "12:00 PM",
@@ -23,14 +53,26 @@ const calendar = [
     days: [0, 2, 4, 5, 6],
   },
   {
-    time: "2:30 PM",
-    name: "Handstand Studio",
+    time: "2:00 PM",
+    name: "Handstand",
     teacher: "Alyssa",
-    days: [6],
+    days: [0, 6],
   },
   {
-    time: "6:30 PM",
-    name: "Restorative Yoga",
+    time: "4:00 PM",
+    name: "Flow 3",
+    teacher: "Alyssa",
+    days: [3, 5],
+  },
+  {
+    time: "6:00 PM",
+    name: "Intro to Yoga",
+    teacher: "Mikayla",
+    days: [1, 3, 5],
+  },
+  {
+    time: "6:00 PM",
+    name: "Flow 2",
     teacher: "Becca",
     days: [0, 2, 4],
   },
@@ -68,15 +110,21 @@ const Home: NextPage = () => {
             </tr>
           </thead>
           <tbody>
-            {calendar.map(({ days, name, time, teacher }) => {
+            {times.map((time) => {
               return (
                 <tr key={time}>
                   <td>{time}</td>
                   {[0, 1, 2, 3, 4, 5, 6].map((day) => {
                     const key = `${time}/${day}`;
-                    if (!days.includes(day)) {
+                    const classObj = calendar.find(
+                      ({ time: classTime, days }) =>
+                        days.includes(day) && classTime === time
+                    );
+                    if (!classObj) {
                       return <td key={key} />;
                     }
+
+                    const { name, teacher } = classObj;
 
                     return (
                       <td key={key}>
