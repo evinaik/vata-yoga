@@ -5,31 +5,31 @@ import styles from "../styles/Home.module.css";
 
 const calendar = [
   {
-    time: "06:00 AM - 07:00 AM",
+    time: "6:00 AM",
     name: "Vata Flow",
     teacher: "Ekansh",
     days: [1, 2, 3, 4, 5],
   },
   {
-    time: "7:00 AM - 8:00 AM",
+    time: "7:00 AM",
     name: "Power Vinyasa Flow",
     teacher: "Anokhi",
     days: [1, 3, 5],
   },
   {
-    time: "12:00 PM - 1:00 PM",
+    time: "12:00 PM",
     name: "Vata Flow",
     teacher: "Megan",
     days: [0, 2, 4, 5, 6],
   },
   {
-    time: "2:30 PM - 4:30 PM",
+    time: "2:30 PM",
     name: "Handstand Studio",
     teacher: "Alyssa",
     days: [6],
   },
   {
-    time: "6:30 PM - 7:30 PM",
+    time: "6:30 PM",
     name: "Restorative Yoga",
     teacher: "Becca",
     days: [0, 2, 4],
@@ -54,43 +54,76 @@ const Home: NextPage = () => {
           <code>a vinyasa studio in NYC</code>
         </p>
 
-        <div>
-          <table className={styles.table}>
-            <thead>
-              <tr>
-                <td></td>
-                <td>Sunday</td>
-                <td>Monday</td>
-                <td>Tuesday</td>
-                <td>Wednesday</td>
-                <td>Thursday</td>
-                <td>Friday</td>
-                <td>Saturday</td>
-              </tr>
-            </thead>
-            <tbody>
-              {calendar.map(({ days, name, time, teacher }) => {
-                return (
-                  <tr key={time}>
-                    <td>{time}</td>
-                    {[0, 1, 2, 3, 4, 5, 6].map((day) => {
-                      const key = `${time}/${day}`;
-                      if (!days.includes(day)) {
-                        return <td key={key} />;
-                      }
+        <table className={styles.table}>
+          <thead>
+            <tr>
+              <td></td>
+              <td>Sunday</td>
+              <td>Monday</td>
+              <td>Tuesday</td>
+              <td>Wednesday</td>
+              <td>Thursday</td>
+              <td>Friday</td>
+              <td>Saturday</td>
+            </tr>
+          </thead>
+          <tbody>
+            {calendar.map(({ days, name, time, teacher }) => {
+              return (
+                <tr key={time}>
+                  <td>{time}</td>
+                  {[0, 1, 2, 3, 4, 5, 6].map((day) => {
+                    const key = `${time}/${day}`;
+                    if (!days.includes(day)) {
+                      return <td key={key} />;
+                    }
 
-                      return (
-                        <td key={key}>
-                          <div>{name}</div>
-                          <div className={styles.teacher}>{teacher}</div>
-                        </td>
-                      );
-                    })}
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+                    return (
+                      <td key={key}>
+                        <div>{name}</div>
+                        <div className={styles.teacher}>{teacher}</div>
+                      </td>
+                    );
+                  })}
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+        <div className={styles.schedule}>
+          {[0, 1, 2, 3, 4, 5, 6].map((day) => {
+            return (
+              <div key={day}>
+                <h3>
+                  {
+                    [
+                      "Sunday",
+                      "Monday",
+                      "Tuesday",
+                      "Wednesday",
+                      "Thursday",
+                      "Friday",
+                      "Saturday",
+                    ][day]
+                  }
+                </h3>
+                <ul className={styles.ul}>
+                  {calendar.map(({ days, name, time, teacher }) => {
+                    const key = `${time}/${day}`;
+                    if (!days.includes(day)) {
+                      return null;
+                    }
+
+                    return (
+                      <li key={key}>
+                        {time}: {name} with {teacher}
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            );
+          })}
         </div>
       </main>
 
