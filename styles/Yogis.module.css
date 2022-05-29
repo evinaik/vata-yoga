@@ -1,0 +1,57 @@
+.role {
+  font-size: 0.8rem;
+  color: gray;
+}
+
+.imageContainer {
+  max-width: 1200px;
+  margin: 16px 0;
+}
+
+.imageContainer img {
+  border-radius: 8px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+}
+
+@media screen and (min-width: 992px) {
+  .container {
+    display: grid;
+  }
+}
+
+.row {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  margin: 24px 0;
+  min-width: 100%;
+  justify-content: space-between;
+}
+
+.row img {
+  border-radius: 100px;
+}
+
+.name {
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: 300;
+}
+
+.headshot {
+  width: 25%;
+}
+
+.hobbies {
+  color: gray;
+}
+
+.text {
+  width: 75%;
+  margin: 0 24px;
+}

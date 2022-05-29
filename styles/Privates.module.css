@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 40vh;
+  width: 600px;
+}
+
+.container a {
+  color: var(--color-link);
+}
+
+@media screen and (min-width: 992px) {
+  .container {
+    display: grid;
+  }
+}
+
+.row {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  margin: 24px 0;
+  min-width: 100%;
+  justify-content: space-between;
+}
+
+.row img {
+  border-radius: 100px;
+}
