@@ -25,7 +25,7 @@ const Privates: NextPage = () => {
             1 hour session: <strong>$180-270</strong>
           </li>
           <li>
-            1.5 hour session: <strong>$300-420</strong>
+            1.5 hour session: <strong>$250-325</strong>
           </li>
         </ul>
         <p>
