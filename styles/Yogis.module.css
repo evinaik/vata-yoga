@@ -15,12 +15,12 @@
 .container {
   display: flex;
   flex-direction: column;
-  width: 600px;
 }
 
 @media screen and (min-width: 992px) {
   .container {
     display: grid;
+    width: 600px;
   }
 }
 
