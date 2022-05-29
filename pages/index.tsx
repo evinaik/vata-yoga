@@ -2,6 +2,8 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
+import team from "../public/team.png";
+import handstands from "../public/handstands.png";
 import dayjs from "dayjs";
 
 const times = [
@@ -107,12 +109,7 @@ const Home: NextPage = () => {
         </h3>
 
         <div className={styles.imageContainer}>
-          <Image
-            alt="handstands"
-            src="/handstands.png"
-            height={600}
-            width={600}
-          />
+          <Image alt="handstands" src={handstands} width={600} height={600} />
         </div>
 
         <table className={styles.table}>
@@ -194,7 +191,7 @@ const Home: NextPage = () => {
         </div>
 
         <div className={styles.imageContainer}>
-          <Image alt="team" src="/team.png" height={900} width={1200} />
+          <Image alt="team" src={team} />
         </div>
       </main>
 
