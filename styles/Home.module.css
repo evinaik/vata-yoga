@@ -21,29 +21,15 @@
   align-items: center;
 }
 
-.footer a {
+/* .footer a {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-grow: 1;
-}
+} */
 
 .title {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-}
-
-.title a {
-  color: var(--accent);
-  text-decoration: none;
-}
-
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
-}
-
-.title {
+  font-weight: 400;
   margin: 0;
   line-height: 1.15;
   font-size: 4rem;
@@ -134,10 +120,10 @@
 
 .table td {
   padding: 12px;
-
   border: 1px solid #eaeaea;
   transition: background-color 0.25s ease, border-color 0.15s ease;
   width: 150px;
+  cursor: default;
 }
 
 .table thead td:first-child {
@@ -150,4 +136,12 @@
 
 .teacher {
   font-size: small;
+}
+
+.imageContainer {
+  margin: 16px 0;
+}
+
+.imageContainer img {
+  border-radius: 8px;
 }
