@@ -4,6 +4,7 @@ import handstands from "../public/handstands.png";
 import { Page } from "../src/page/Page";
 import styles from "../styles/Yogis.module.css";
 import ekansh from "../public/ekansh.jpeg";
+import anokhi from "../public/anokhi.png";
 
 const YOGIS = [
   {
@@ -26,7 +27,7 @@ const YOGIS = [
     firstName: "Anokhi",
     lastName: "Bafna",
     role: "Yogi",
-    // image: ekansh,
+    image: anokhi,
     bio: "Anokhi grew up in Bangalore, and has been practicing yoga since she was quite literally a baby. Her class will have you learning Sanskrit in no time. She's en route to getting her 500 HR RYT.",
     hobbies: ["eka pada raja kapotasana"],
   },
